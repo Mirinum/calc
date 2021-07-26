@@ -75,21 +75,5 @@
                 
             </div>
         </div>
-
-        <script>
-            function mb2mbit() {
-                var mb = document.getElementById("mb");
-                var mbit = document.getElementById("mbit");
-                mbit.value = mb.value / 0.125;
-            }
-        </script>
-        <script>
-            function mbit2mb() {
-                var mb = document.getElementById("mb");
-                var mbit = document.getElementById("mbit");
-                mb.value = mbit.value * 0.125;
-            }
-        </script>
-
     </body>
 </html>
