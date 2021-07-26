@@ -18,6 +18,29 @@
             body {
                 font-family: 'Nunito', sans-serif;
             }
+            .myButton {
+	            box-shadow:inset 0px 1px 0px 0px #ffffff;
+	            background:linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
+	            background-color:#ededed;
+	            border-radius:6px;
+	            border:1px solid #dcdcdc;
+	            display:inline-block;
+	            cursor:pointer;
+	            color:#777777;
+	            font-family:Impact;
+	            font-size:15px;
+	            padding:7px 24px;
+	            text-decoration:none;
+            }
+            .myButton:hover {
+                background:linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
+                background-color:#dfdfdf;
+            }
+            .myButton:active {
+                position:relative;
+                top:1px;
+            }
+
         </style>
     </head>
     <body class="antialiased">
@@ -31,19 +54,21 @@
 
                 <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                     <div class="grid grid-cols-1">
-                        <div class="p-6">
-
+                        <form class="p-6" method="post">
+                        @csrf
                             <div style="float:left">
                                 <div class="ml-4 text-lg leading-7 font-semibold">MBit</div>
-                                <input type="number" id="mbit" name="mbit" value=0 onchange="mbit2mb()"> </input>
+                                <input type="number" step="any" id="mbit" name="mbit" value={{ $mbit ?? 0 }}></input>
+                                <input type="submit" value="Mbit2MB" name= "mbit2mb" class="myButton"></input>
                             </div>
 
                             <div style="float:left">
                                 <div class="ml-4 text-lg leading-7 font-semibold">MB</div>
-                                <input type="number" id="mb" name="mb" value=0 onchange="mb2mbit()"></input>
+                                <input type="number" step="any" id="mb" name="mb" value={{ $mb ?? 0 }}></input>
+                                <input type="submit" value="MB2Mbit" name="mb2mbit" class="myButton"></input>
                             </div>
-                        </div>
-
+                            <input type="hidden" value="">
+                        </form>
                     </div>
                 </div>
 
